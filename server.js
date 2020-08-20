@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 var path = require('path');
 var cors = require('cors');
 const category = require('./routes/category')
+const articles = require('./routes/articles')
 const db = require('./config/keys').mongoURI
 
 
@@ -15,7 +16,7 @@ let app = express();
 
 
 
-app.use(express.static( path.join(__dirname, 'public'),{maxAge:3600}));
+app.use(express.static( path.join(__dirname, 'public')));
 
 //Cors enable
 app.use(cors());
@@ -37,20 +38,23 @@ moongoose.set('useFindAndModify', false);
 
 //Use Routes
 app.use('/api/category',category)
+app.use('/api/articles',articles)
 
 
 
 
-app.get('*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'client','build','index.html'));
-})
 
 //Server static assets if in production
 if (process.env.NODE_ENV==='production'){
     //Set static folder
     app.use(express.static('client/build'))
+    
+
 }
 
+app.get('*',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'client','build','index.html'));
+})
 
 const port = process.env.PORT  || 5000;
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Category from './Category';
-
 import { toAbsoluteUrl } from '../_helpers/AssestsHelper';
 import Alert from '../utils/Alert';
 
@@ -15,6 +14,7 @@ const DisplayLinks = () => {
     })
 
     useEffect(() => {
+        let unmounted=false;
         getAllCategories()
             .then((res) => {
                 setCategories(res.data)
@@ -27,7 +27,7 @@ const DisplayLinks = () => {
                 })
             })
 
-
+            return () => { unmounted = true };
     }, [])
 
 

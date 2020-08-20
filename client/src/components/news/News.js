@@ -1,7 +1,7 @@
 import React, { useState, } from 'react'
 import Article from './Article.js'
 import Search from './Search.js'
-import {getNews} from '../../services/newsAPI'
+import {getArticles}from '../../services/api'
 
 import './articles-page-style.scss'
 
@@ -13,20 +13,20 @@ const News=()=> {
     const fetchData = (inputValue) => {
 
         
-        getNews(inputValue)
+        getArticles(inputValue)
             .then(res => {
                 
-                if (res.data.articles.length === 0) {
+                if (res.data.length === 0) {
                     setMessage("No results for this keyword");
                     setArticles([]);
                 }
-                else if (inputValue !== "" && JSON.stringify(articles) !== JSON.stringify(res.data.articles.slice(0, 10))) {
-                    setArticles(res.data.articles)
+                else if (inputValue !== "" && JSON.stringify(articles) !== JSON.stringify(res.data.slice(0, 10))) {
+                    setArticles(res.data)
                 }
                 setLoading(false)
             })
             .catch(err => {
-                console.log(err);
+               
                 setMessage("Fetch News Failed");
             })
     }
