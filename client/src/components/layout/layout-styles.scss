@@ -1,0 +1,159 @@
+@import "../shared.scss";
+
+$main-font: Roboto;
+
+//Container
+.layout-container {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-rows: 55px auto 5%;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+//Header
+
+.header-container {
+  width: 100%;
+  height:50px;
+  background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  border-bottom: 1px solid rgba(white, 0.2);
+}
+
+.nav-button {
+  height: 100%;
+  min-width: 70px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  font-family: Georgia;
+  margin: 0.2rem;
+  padding: 0.4rem;
+
+  outline: none;
+  text-decoration: none;
+  transition: background-color 0.8s;
+  &:hover {
+    background-color: rgba(white, 0.2);
+    transition: background-color 0.5s;
+  }
+
+  @media (min-width: 40rem) {
+    font-size: 1.5rem;
+    width: 10%;
+    height: 100%;
+    min-width: 125px;
+  }
+}
+
+.nav-button--active {
+  background-color: white;
+  color: map-get($colors, main);
+  pointer-events: none;
+}
+//Left side
+
+.nav-left-side {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+
+  button {
+    outline: none;
+    border: none;
+    background-color: map-get($colors, main);
+    color: white;
+  }
+  button:hover {
+    background-color: white;
+    color: map-get($colors, main);
+  }
+  img {
+    width: 40px;
+    height: 40px;
+
+    @media (min-width: 40rem) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+.toggle-button {
+  @media (min-width: 40rem) {
+    display: none;
+  }
+}
+
+//Right side
+.nav-right-buttons {
+  
+  display: none;
+  align-items: center;
+
+  @media (min-width: 40rem) {
+    display: flex;
+  }
+}
+
+//Main
+.main-container {
+  grid-area: main;
+  overflow-y: auto;
+}
+
+//Footer
+
+.footer-container {
+  width: 100%;
+  background: map-get($colors, main);
+  height: 100%;
+  grid-area: footer;
+}
+
+//Side menu
+
+.MuiDrawer-paper {
+  width:100%;
+}
+.side-nav-menu-container {
+  background-color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width:80%;
+  margin:auto;
+
+  ul{
+    margin: 2rem;
+    padding:0;
+    
+    font-size: 20px ;
+    a{
+      text-decoration: none;
+      color:rgba(black, 0.6);
+
+    }
+  }
+
+  li{
+    font-family: Georgia;
+    list-style: none;
+    display: block;
+    border:0.5px solid rgba(black, 0.2);
+  }
+  li a{ 
+    display: block;
+   
+  }
+  
+}

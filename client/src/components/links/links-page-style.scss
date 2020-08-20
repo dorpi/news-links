@@ -1,0 +1,279 @@
+@import "../shared";
+
+.links-display-container{
+  position: relative;
+  display: flex;
+  font-family: Georgia;
+  flex-direction: column;
+  align-items: center;
+ h1{
+   margin:1rem;
+   color:white;
+   font-family: Georgia;
+ }
+  h2{
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    text-align: center;
+    margin:0.2rem;
+    
+   .MuiDivider-root{
+     width:90%;
+   }
+    @media (min-width:40rem) {
+      font-size: 2.5rem;
+     
+    }
+  }
+}
+
+.link-edit-button{
+  position: absolute;
+  top:10%;
+  right:0;
+
+ @media (min-width:30rem) {
+   top:0;
+ }
+}
+
+
+.links-title-image{
+  width:40%;
+  align-self: center;
+  text-align:center;
+  min-width: 300px;
+  min-height: 230px;
+  @media (min-width:40rem) {
+    width:30%;
+    margin-bottom: 1rem;
+    max-width: 300px;
+ 
+  }
+
+}
+
+.edit-page-photo-container{
+    display:flex;
+    border:1px solid map-get($colors, border);
+    border-radius: 10px;
+    padding:1rem;
+    justify-content: space-between;
+   
+    
+    span{
+      font-size: 20px;
+    }
+    img{
+      height: 60px;
+      width:60px;
+    }
+
+  @media (min-width:40rem) {
+    margin:auto;
+    img{
+      height: 100px;
+      width:100px;
+    }
+  }
+}
+
+.link-catagory-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width:100%;
+  
+  
+  @media (min-width:40rem) {
+    width:60%;
+    align-content: center;
+    min-width:580px;
+ 
+
+  }
+}
+
+// LINK BUTTON STYLE
+
+.link-button-style {
+   
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+   
+    height: 90%;
+    width:90%;
+    border-radius: 20px;
+    border:none;
+    background-color: inherit;
+    text-decoration: none;
+    font-weight: 800;
+    font-family: Georgia;
+    font-size:1rem;
+    padding:0.8rem;;
+    margin: auto;
+    color:black;
+    span{
+      font-size: 0.8rem;
+      margin:0;
+      word-break:break-all;
+    }
+    img{
+      width:35px;
+      height: 35px;
+      
+      }
+    
+    @media (min-width:40rem){
+      height: 100%;
+      width:100%;
+      transition: background-color 0.8s;
+      &:hover{
+        background-color: rgba(black,0.2); /* Green */
+        color: white;
+      }
+    
+      span{
+        font-size: 1rem;
+      }
+      img{
+        width:70px;
+        height: 70px;
+        margin: auto;
+        }
+
+    }
+}
+
+
+.link-button-container a{
+  height: 100%;
+  width:100%;
+  text-decoration: none;
+}
+
+button:focus{
+  outline: none;
+}
+button:hover{
+  cursor: pointer;
+}
+
+            //   Link //
+.link-container{
+    height: 90%;
+    width:20%;
+    justify-self: flex-end;
+    
+   
+    a{
+      height: 100%;
+      width:100%;
+      text-decoration: none;
+    }
+    @media (min-width:40rem) {
+      margin:0.5rem;
+      display:flex;
+    }
+  }
+
+
+
+                          //   Links //
+
+.links-container{
+ 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  color:black;
+
+  .MuiDivider-root{
+    display:none;
+  }
+
+  h2{
+    text-align: center;
+    color:#181C32;
+    text-decoration: underline;
+  }
+
+  @media (min-width:40rem) {
+    margin-bottom:1rem;
+    border-radius: 20px;
+  
+    .MuiDivider-root{
+      background-color:map-get($colors, border );
+      display: block;
+      width:95%;
+    }
+    h2{
+      text-decoration: none;
+    }
+  }
+
+
+ 
+}
+
+
+.links-buttons-container{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(black,0.2);
+  height: 100px;
+  align-items: center;
+  width:100%;
+
+  @media(min-width: 40rem){
+    height: 135px;
+    border:none;
+    padding:0.5rem;
+  }
+}
+
+
+.link-page-edit-page-container{
+  font-family: Georgia;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+  form{
+    border:4px solid map-get($colors, border );
+    display: grid;
+    gap: 0.5rem;
+    flex-direction: column;
+    border-radius: 20px;
+    text-align: center;
+    padding: 1rem;
+    margin:1rem;
+    width:90%;
+    min-width: 250px;
+   
+  }
+    
+}
+.link-page-edit-button-container{
+  position: absolute;
+  right:0;
+  
+}
+
+
+.MuiDialogTitle-root h2{
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.MuiDialog-paperWidthSm {
+  width: 80%;
+}

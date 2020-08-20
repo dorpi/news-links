@@ -1,0 +1,156 @@
+@import "../shared.scss";
+
+
+.news-page-container {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+
+  
+   
+    width:100%;
+    #news-page-header {
+        min-height: 230px;
+        min-width: 280px;
+
+        background-image: url('/media/misc/news.png');
+        background-size: cover; 
+    }
+    .MuiPaper-rounded{
+        @media (min-width:30rem){
+        border-radius: 20px;
+    }
+     }
+     .MuiInputBase-root{
+         font-size:1.5rem
+     }
+    @media (min-width: 40rem) {
+        align-items: center;
+        
+    }
+}
+
+.articles-container {
+    transition: opacity 1s;
+    opacity: 1;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top:2rem;
+
+    @media (min-width: 40rem) {
+        width: 80%;
+        margin: 2rem;
+        padding:1rem;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 50% 50%;
+        gap: 1rem;
+        border-radius: 20px;
+        border:0.2px solid map-get($colors, border );
+        background-color: white;
+        
+        
+    }
+}
+.articles-container.hide{
+    opacity: 0;
+    pointer-events:none;
+    height: 43vh;
+    @media (min-width:40rem){
+        height: 25vh;
+    }
+
+}
+
+.article-container {
+    border-top: 0.5px solid map-get($colors, border);
+    height: 130px;
+    background-color: white;
+    
+
+
+    a,
+    a:focus,
+    a:active {
+        text-decoration: none;
+        color: inherit;
+    }
+    @media (min-width: 40rem) {
+        border:none;
+        border-radius: 20px;
+    }
+}
+
+.article-content-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100%;
+    padding: 0.1rem;
+    color:black;
+    background-color: white;
+    transition: background-color 0.5s;
+    border-radius: 10px;
+    &:hover {
+        transition: background-color 0.5s;
+        background-color: rgba(black, 0.1);
+        color:map-get($colors , main );
+      
+        border: none;
+      
+    }
+    p ,span{
+        padding: 0 1rem 0 1rem;
+        margin:0;
+        font-family: auto;
+        font-size: 1.2rem;
+        
+    }
+    img {
+        border-radius: 4px;
+        
+        width: 100%;
+        height: 100%;
+    }
+    span{
+        color:#B5B5C3 ;
+     
+    }
+
+    .MuiCircularProgress-root{
+        justify-self: center;
+    }
+
+    
+  
+    @media (min-width: 80rem) {
+        border-radius: 5px;
+        p {
+            font-size: 1.5rem;
+            word-wrap: break-word;
+            
+        }
+    }
+}
+.search-container {
+    display: flex;
+    padding-left: 0.4rem;
+    border: 0.5px solid map-get($colors, border);
+    justify-content: space-between;
+    
+    @media (min-width: 40rem) {
+        width: 70%;
+    }
+}
+
+.text-box {
+    width: 100%;
+    padding-left: 1rem;
+    font-size: 3rem;
+}
+
+
