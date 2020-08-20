@@ -4,19 +4,17 @@ import './main-page.scss';
 import Divider from '@material-ui/core/Divider'
 import Article from '../news/Article'
 import { toAbsoluteUrl } from '../_helpers/AssestsHelper';
-import {getNews} from '../../services/newsAPI';
-
+import {getArticles}from '../../services/api'
 const MainPage=()=> {
     const [coronaArticles, setCoronaArticles] = useState([]);
     const [loading,setLoading]=useState(true);
 
     useEffect(() => {
-        var date = new Date();
-        var toDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDay()}`;
-        var fromDate = `${date.getFullYear()}-${date.getMonth() -2}-${date.getDay()}`;
-        getNews('Corona',fromDate,toDate).then(res => {
+        
+        getArticles('Corona').then(res => {
+           
                 setLoading(false);
-                setCoronaArticles(res.data.articles);
+                setCoronaArticles(res.data);
             })
             .catch(err => console.log(err))
     },[])
