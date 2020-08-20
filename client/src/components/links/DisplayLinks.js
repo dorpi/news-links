@@ -15,6 +15,7 @@ const DisplayLinks = () => {
     })
 
     useEffect(() => {
+         let unmounted=false;
         getAllCategories()
             .then((res) => {
                 setCategories(res.data)
@@ -26,7 +27,7 @@ const DisplayLinks = () => {
                     message: "Can't fetch from the server"
                 })
             })
-
+  return () => { unmounted = true };
 
     }, [])
 
