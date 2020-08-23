@@ -10,7 +10,7 @@ const Link = ({ name, url,imgSrc }) => {
         <div className='link-container'>
             <a href={`https://${url}`} target='_blank' rel="noopener noreferrer">  
                 <button className='link-button-style'>
-                    <img key={Date.now()} src={"http://localhost:5000/"+imgSrc} className="img-style"  alt="Missing"  />
+                    <img key={Date.now()} src={imgSrc} className="img-style"  alt="Missing"  />
                     <span>{name}</span>
                 </button>
             </a>
