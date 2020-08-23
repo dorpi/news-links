@@ -83,7 +83,7 @@ const LinkEdit =({ link, index, setLink, errors, clearError, setErrors })=> {
                     Select Image < PhotoCamera />
 
                 </IconButton>
-                <img id="edit-image-link" src={previewFile ? previewFile : toAbsoluteUrl(`http://localhost:5000/${link.imgsrc}`)} className="img-style" alt="Missing" onChange={(event) => _handleChange(event)} />
+                <img id="edit-image-link" src={previewFile ? previewFile : toAbsoluteUrl(link.imgsrc)} className="img-style" alt="Missing" onChange={(event) => _handleChange(event)} />
             </div>
             {errors.file ? <div className="invalid-feedback">{errors.file}</div> : ''}
             <Divider />
