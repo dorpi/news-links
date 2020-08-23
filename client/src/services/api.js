@@ -21,5 +21,5 @@ export const getCategory = (id)=>{
 
 
 export const getArticles = (subject)=>{
-     return Axios.get('http://localhost:5000/api/articles/'+subject)
+     return Axios.get('/api/articles/'+subject)
 }
