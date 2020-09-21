@@ -44,7 +44,7 @@ const News=()=> {
 
     return (
         <div className="news-page-container">
-            <div id="news-page-header"></div>
+            <h1 id="news-page-header">News Search</h1>
             <Search onSearch={onSearch} />
             {articles.length === 0 ? <h4 style={{ marginLeft: 'auto', marginRight: 'auto', fontFamily: 'georgia' }}>{message}</h4> : ''}
             {articles.length !== 0 ? <div className="articles-container">
