@@ -14,7 +14,7 @@ const DisplayLinks = () => {
     })
 
     useEffect(() => {
-        let unmounted=false;
+      
         getAllCategories()
             .then((res) => {
                 setCategories(res.data)
@@ -27,7 +27,7 @@ const DisplayLinks = () => {
                 })
             })
 
-            return () => { unmounted = true };
+           
     }, [])
 
 

@@ -11,7 +11,7 @@ const LeftSideNav=()=> {
         alt="Logo"
         src={toAbsoluteUrl("/media/misc/circle.png")}
       />
-      <NavLinkButton to={"/"} name={"Home"} />
+      <NavLinkButton className="home-link" to={"/"} name={"Home"} />
 
     </div>
   )

@@ -35,6 +35,7 @@ const [links,setlinks] = useState(urls);
                 message:err
             });
         })
+        
     }, [submitForm,id,setAlert])
 
 
@@ -61,7 +62,7 @@ const [links,setlinks] = useState(urls);
              setSubmitForm={setSubmitForm}
             
              ></EditPage>
-
+              <Divider orientation="horizontal" />
             <h2>
                 {categoryTitle}
             </h2>
